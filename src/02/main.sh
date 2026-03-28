@@ -1,0 +1,41 @@
+#!/bin/bash
+
+source ./calculate.sh
+calculate
+
+echo -e "HOSTNAME = $HOSTNAME
+TIMEZONE = $TIMEZONE
+USER = $USER
+OS = $OS
+DATE = $DATE
+UPTIME = $UPTIME
+UPTIME_SEC = $UPTIME_SEC
+IP = $IP
+MASK = $MASK
+GATEWAY = $GATEWAY
+RAM_TOTAL = $RAM_TOTAL
+RAM_USED = $RAM_USED
+RAM_FREE = $RAM_FREE
+SPACE_ROOT = $SPACE_ROOT
+SPACE_ROOT_USED = $SPACE_ROOT_USED
+SPACE_ROOT_FREE = $SPACE_ROOT_FREE"
+
+read -p "Do you want to write data into file (Y/n)? " mode
+if [[ "$mode" == "y" ]] || [[ "$mode" == "Y" ]]; then
+  echo -e "HOSTNAME = $HOSTNAME
+TIMEZONE = $TIMEZONE
+USER = $USER
+OS = $OS
+DATE = $DATE
+UPTIME = $UPTIME
+UPTIME_SEC = $UPTIME_SEC
+IP = $IP
+MASK = $MASK
+GATEWAY = $GATEWAY
+RAM_TOTAL = $RAM_TOTAL
+RAM_USED = $RAM_USED
+RAM_FREE = $RAM_FREE
+SPACE_ROOT = $SPACE_ROOT
+SPACE_ROOT_USED = $SPACE_ROOT_USED
+SPACE_ROOT_FREE = $SPACE_ROOT_FREE" > "$(date "+%d_%m_%Y_%H_%M_%S.status")"  
+fi
